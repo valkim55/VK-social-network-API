@@ -10,6 +10,7 @@ const userController = {
                 res.json(dbUserData);
             }).catch(err => {
                 res.status(400).json(err);
+                console.log(err)
             });
     },
 
@@ -51,6 +52,19 @@ const userController = {
         }).catch(err => {
             res.status(400).json(err);
         });
+    },
+
+    // User.findOneAndUpdate method to add a friend by id through PUT request, corresponding route will be /api/users/userId/friendId
+    addFriend({params}, res) {
+        User.findOneAndUpdate(
+            { _id: params.userId}, {$addToSet: {friends: {friendId: params.friendId} }}, {new: true}
+        ).then(dbUserData => {
+            if(!dbUserData) {
+                res.status(404).json({message: 'no user found with requested id'});
+                return;
+            }
+            res.json(dbUserData);
+        }).catch(err => { res.status(400).json(err) });
     },
 
     // User.findOneAndDelete method that corresponds to DELETE request

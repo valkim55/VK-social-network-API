@@ -21,17 +21,25 @@ const UserSchema = new Schema(
                 ref: 'Thought'
             }
         ],
-        friends: [ ObjectId ]
+        friends: [ {$id: ObjectId} ]
     },
     {
         toJSON: {
-            virtuals: true
+            virtuals: true,
+            getters: true
         },
 
         id: false 
 
     }
 );
+
+
+// add a virtual to count friends
+UserSchema.virtual('friendsCount').get(function() {
+    return this.friends.length;
+});
+
 
 const User = model('User', UserSchema);
 module.exports = User;
