@@ -1,6 +1,7 @@
 const {Schema, model, Types} = require('mongoose');
 const formatDate = require('../utils/convert-date');
 
+
 const ReactionSchema = new Schema(
     {
         reactionId: {
@@ -16,8 +17,7 @@ const ReactionSchema = new Schema(
 
         username: {
             type: String,
-            required: true,
-            trim: true
+            required: true
         },
 
         createdAt: {
@@ -30,7 +30,8 @@ const ReactionSchema = new Schema(
         toJSON: {
             // adding getters to use date converting function
             getters: true
-        }
+        },
+        id: false
     }
 );
 
@@ -51,7 +52,12 @@ const ThoughtSchema = new Schema(
         username: {
             type: String,
             required: true,
-            trim: true 
+            trim: true
+        },
+
+        userId: {
+            type: Schema.Types.ObjectId,
+            ref: 'User'
         },
 
         reactions: [ ReactionSchema ]

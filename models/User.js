@@ -7,6 +7,7 @@ const UserSchema = new Schema(
         username: 
             {type: String, 
             required: 'Please enter your username', 
+            unique: true, 
             trim: true},
 
         email: 
@@ -21,7 +22,7 @@ const UserSchema = new Schema(
                 ref: 'Thought'
             }
         ],
-        friends: [ this ]
+        friends: [ this, console.log(this, module.exports === this) ]
     },
     {
         toJSON: {
