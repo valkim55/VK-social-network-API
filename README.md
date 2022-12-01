@@ -4,20 +4,20 @@
 #### _Please refer to the navigation below for an easier access._
 ### Navigation
 
-- [**Overview**](#application-overview📝)
-- [**Walk-through and functionality**](#walk-through-and-functionality🖍️)
-- [**Video demonstration**](#video-demonstration📋)
-- [**Reach out**](#reach-out🗨️)
+- [**Overview**](#application-overview)
+- [**Walk-through and functionality**](#walk-through-and-functionality)
+- [**Video demonstration**](#video-demonstration)
+- [**Reach out**](#reach-out)
 <br></br>
 
-> ### **Application Overview**📝
+> ### **Application Overview**
 This server-side RESTful API application is created as a base for a simple social network app, where users can be created, befriend each other, share their thoughts and react to each other's postings. <br> 
 This application demonstrates the benefits of utilizing a NoSQL database - MongoDB and Mongoose - the library that connect the database and Node.js environment and lets the user perform queries in Javascript syntax. <br>
 The fundamental CRUD operations can be performed on a user and thought schemas. The application also demonstrates different approaches when it comes to referencing one Schema from the other. <br>
 This application was also designed according to MVC pattern, taking into consideration that the View portion (client side) can be easily added in the future stages of development. 
 <br></br>
 
-> ### **Walk-through and functionality**🖍️
+> ### **Walk-through and functionality**
 In order to test the application, please run **`npm install`** to install all the dependencies, and then run **`node server`** to start the application. Insomnia or Postman - both can be used to test the API requests.<br> **User** controller holds: <br>
 - `.find()` method to return all users through `GET` request at /api/users endpoint 
 - `.findOne()` method to return user by its ID on `GET` request at /api/users/:userID endpoint 
@@ -43,10 +43,10 @@ Similarly, **ThoughtSchema** has a model, it has its own routes and endpoints, w
 - `.findOneAndUpdate()` method to delete an existing reaction on `DELETE` request at /api/thoughts/:thoughtId/reactions/:reactionId endpoint
 <br></br>
 
-> ### **Video demonstration**📋
+> ### **Video demonstration**
 Here is a brief video walk-through for the CRUD operations explained earlier. [CLICK HERE](https://drive.google.com/file/d/1OBXhVs9wdww56C4Zg7q52xJS6oYw_zJK/view)
 <br></br>
 
-> ### **Reach Out**🗨️
+> ### **Reach Out**
 If you have any ideas/suggestions to take this application to further improvements, please feel free to reach out [here](https://www.linkedin.com/in/valeriya-kim/) <br>
 **Thank you for visiting!**
